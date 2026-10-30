@@ -1,0 +1,3 @@
+# Copy to .dev.vars for local `wrangler dev` / Deploy to Cloudflare secret prompts.
+# .dev.vars is gitignored — never commit a real key.
+TRACKING_KEY=your_spyderbot_tracking_key

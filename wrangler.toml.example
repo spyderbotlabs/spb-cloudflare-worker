@@ -1,0 +1,21 @@
+# Copy to wrangler.toml (or use this repo's wrangler.toml as-is) then:
+#   npx wrangler secret put TRACKING_KEY
+#   npx wrangler deploy
+name = "spyderbot-tracking"
+main = "src/worker.ts"
+compatibility_date = "2024-09-23"
+
+# Secrets (set via `wrangler secret put TRACKING_KEY` — never commit real keys):
+#   TRACKING_KEY = AI Traffic project ingest key (llm_tracking_projects.tracking_key)
+
+[vars]
+# Full server-track ingest URL (production default).
+# For non-production SpyderBot environments, use the origin shown on that
+# environment's Integrations page (append /server-track).
+# Legacy alternate: https://spyderbot.net/api/server-track
+API_URL = "https://api.spyderbot.net/server-track"
+SCRIPT_ORIGIN = "https://spyderbot.net"
+SCRIPT_VERSION = "1.1.1"
+# Optional comma-separated path globs — matched paths pass through untouched
+# (no cookie, no wfm.js inject, no server-track).
+# EXCLUDED_PATH_PATTERNS = "/api/*,/admin*,/dashboard*,*auth*,*webhook*,/build/*,/storage/*"

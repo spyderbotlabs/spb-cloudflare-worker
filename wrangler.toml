@@ -1,0 +1,13 @@
+# Public Wrangler config for Deploy to Cloudflare / `wrangler deploy`.
+# Set TRACKING_KEY as a Worker secret (see .dev.vars.example) — never commit real keys.
+name = "spyderbot-tracking"
+main = "src/worker.ts"
+compatibility_date = "2024-09-23"
+
+[vars]
+API_URL = "https://api.spyderbot.net/server-track"
+SCRIPT_ORIGIN = "https://spyderbot.net"
+SCRIPT_VERSION = "1.1.1"
+# Optional comma-separated path globs — matched paths pass through untouched
+# (no cookie, no wfm.js inject, no server-track).
+# EXCLUDED_PATH_PATTERNS = "/api/*,/admin*,/dashboard*,*auth*,*webhook*,/build/*,/storage/*"

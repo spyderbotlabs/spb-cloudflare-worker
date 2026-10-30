@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+!.dev.vars.example
+*.log
+.DS_Store
+# Local deploy config may contain secrets — keep the example tracked
+wrangler.toml.local

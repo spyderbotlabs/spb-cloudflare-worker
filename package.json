@@ -1,0 +1,38 @@
+{
+  "name": "@spyderbot/cloudflare-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker for SpyderBot LLM / bot tracking at the edge",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "generate": "node scripts/generate-worker.mjs",
+    "drift-check": "node scripts/drift-check.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.8.71",
+    "@cloudflare/workers-types": "^4.20250906.0",
+    "typescript": "^5.8.3",
+    "vitest": "~3.2.0",
+    "wrangler": "4.35.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spyderbotlabs/spb-cloudflare-worker.git"
+  },
+  "homepage": "https://github.com/spyderbotlabs/spb-cloudflare-worker#readme",
+  "bugs": {
+    "url": "https://github.com/spyderbotlabs/spb-cloudflare-worker/issues"
+  },
+  "cloudflare": {
+    "bindings": {
+      "TRACKING_KEY": {
+        "description": "Your SpyderBot AI Traffic **project tracking key** (AI Traffic → website → Setup). Paste it when prompted as a Worker **secret** — never commit the real key."
+      }
+    }
+  }
+}
